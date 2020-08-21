@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory, RouteRecordRaw } from 'vue-router';
 import Home from '../views/Home.vue';
 import About from '../views/About.vue';
+import CompositionApi from '../components/CompositionAPIComponent.vue';
+import OptionApi from '../components/OptionsAPIComponent.vue';
 
 const routes: Array<RouteRecordRaw> = [
   {
@@ -12,6 +14,16 @@ const routes: Array<RouteRecordRaw> = [
     path: '/about',
     name: 'About',
     component: About,
+  },
+  {
+    path: '/composition',
+    name: 'Composition',
+    component: CompositionApi,
+  },
+  {
+    path: '/option',
+    name: 'Option',
+    component: OptionApi,
   },
 ];
 
