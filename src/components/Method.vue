@@ -1,21 +1,21 @@
 <template>
-  <button @click="clickHandler">Button</button>
-  <button @click="complexClickHandler">Complex Button</button>
+  <button id="normalButton" @click="clickHandler">Button</button>
+  <button id="complexButton" @click="complexClickHandler">Complex Button</button>
 </template>
 
 <script lang="ts">
 import { defineComponent, reactive, toRefs } from 'vue';
 
-const createComponentStore = () => {
+export const createComponentStore = () => {
   const state = reactive({
     count: 0,
     flag: false,
   });
   return toRefs(state);
 };
-type ComponentState = ReturnType<typeof createComponentStore>;
+export type ComponentState = ReturnType<typeof createComponentStore>;
 
-const useComplexClickHandler = ({
+export const useComplexClickHandler = ({
   componentState,
 }: {
   componentState: ComponentState;
